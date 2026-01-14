@@ -1,16 +1,14 @@
-/* Esto centra la sección en toda la pantalla */
 body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center; /* Centrado horizontal */
-    align-items: center;     /* Centrado vertical */
-    min-height: 100vh;       /* Usa el 100% de la altura de la ventana */
-    background-color: #f0f2f5; /* Un color de fondo suave */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* Tu componente section (creado en JS) */
 section {
     background-color: #ffffff;
     padding: 2.5rem;
@@ -23,7 +21,6 @@ section {
     gap: 20px;
 }
 
-/* Título */
 h3 {
     margin: 0;
     color: #1c1e21;
@@ -32,7 +29,6 @@ h3 {
     font-weight: 700;
 }
 
-/* Estilo de los inputs */
 input {
     padding: 14px;
     border: 1px solid #dddfe2;
@@ -49,7 +45,6 @@ input:focus {
     box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
 }
 
-/* Botón */
 button {
     padding: 14px;
     background-color: #1877f2;

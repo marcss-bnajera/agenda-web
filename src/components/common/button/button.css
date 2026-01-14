@@ -5,8 +5,8 @@
     
     width: 298px; 
     height: 50px;
-    padding: 0 25px; /* Un poco más de espacio interno lateral */
-    margin-bottom: 15px; /* SEPARACIÓN ENTRE BOTONES (Arriba/Abajo) */
+    padding: 0 25px;
+    margin-bottom: 15px;
     
     background-color: #fff;
     border: none; 
@@ -31,10 +31,9 @@
     font-weight: bold;
     color: #333;
     
-    /* Para que el texto no se pegue a la imagen si es largo */
     flex-grow: 1;
     text-align: left; 
-    margin-left: 15px; /* Espacio entre la imagen y el texto */
+    margin-left: 15px;
     
     white-space: nowrap;
     overflow: hidden;
@@ -49,14 +48,13 @@
     width: 22px;
     height: 22px;
     display: block;
-    flex-shrink: 0; /* Evita que la imagen se aplaste si el texto es largo */
+    flex-shrink: 0;
 }
 
 .custom-button:hover .button-image img {
     filter: brightness(0) invert(1);
 }
 
-/* Evita que el último botón tenga margen innecesario abajo */
 .custom-button:last-child {
     margin-bottom: 0;
 }
