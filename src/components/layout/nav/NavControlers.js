@@ -1,5 +1,5 @@
 import { Contactos } from "./../../sections/contactos/Contactos.js"
-import { NewContactForm } from "./../../sections/newContactForm/NewContactForm.js"
+import { FormularioContacto } from "./../../sections/newContactForm/NewContactForm.js"
 
 let container = document.getElementById("container");
 
@@ -10,7 +10,7 @@ let viewContacts = function () {
 
 let viewNewContacts = function () {
     container.innerHTML = "";
-    container.appendChild(NewContactForm());
+    container.appendChild(FormularioContacto());
 }
 
 export { viewContacts, viewNewContacts};
