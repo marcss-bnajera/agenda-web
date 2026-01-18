@@ -1,23 +1,29 @@
-import { ContactList } from "../contactos/db.js";
+import { TaskList } from "./../tareas/dbTareas.js";
 
-let FormularioContacto = () => {
+let FormularioTarea = () => {
+
     let sectionFormulario = document.createElement("section");
     sectionFormulario.className = "formulario";
 
     let h2 = document.createElement("h2");
-    h2.textContent = "Nuevo contacto";
+    h2.textContent = "Nueva tarea";
 
     let form = document.createElement("form");
 
     let inputNombre = document.createElement("input");
     inputNombre.type = "text";
-    inputNombre.placeholder = "Nombre";
+    inputNombre.placeholder = "Tarea";
     inputNombre.required = true;
 
-    let inputTelefono = document.createElement("input");
-    inputTelefono.type = "tel";
-    inputTelefono.placeholder = "Teléfono";
-    inputTelefono.required = true;
+    let inputDescripcion = document.createElement("input");
+    inputDescripcion.type = "text";
+    inputDescripcion.placeholder = "Descripción";
+    inputDescripcion.required = true;
+
+    let inputPrioridad = document.createElement("input");
+    inputPrioridad.type = "text";
+    inputPrioridad.placeholder = "Prioridad";
+    inputPrioridad.required = true;
 
     let button = document.createElement("button");
     button.type = "submit";
@@ -32,7 +38,8 @@ let FormularioContacto = () => {
     });
 
     form.appendChild(inputNombre);
-    form.appendChild(inputTelefono);
+    form.appendChild(inputDescripcion);
+    form.appendChild(inputPrioridad);
     form.appendChild(button);
     form.appendChild(buttonC);
 
@@ -42,17 +49,20 @@ let FormularioContacto = () => {
     form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        let contacto = {
-            nombre: inputNombre.value,
-            telefono: inputTelefono.value
+        let tarea = {
+            estado: false,
+            tarea: inputNombre.value,
+            descripcion: inputDescripcion.value,
+            prioridad: inputPrioridad.value
         };
 
-        console.log(contacto);
-        ContactList.push(contacto);
+        console.log(TaskList);
+        TaskList.push(tarea);
 
+        form.reset();
     });
 
     return sectionFormulario;
-}
+};
 
-export { FormularioContacto };
+export { FormularioTarea };

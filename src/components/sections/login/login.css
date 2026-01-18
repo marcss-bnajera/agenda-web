@@ -5,62 +5,71 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f2f5;
-    font-family: 'Segoe UI', sans-serif;
+    background-color: #CCD0CF;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 section {
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(17, 33, 45, 0.15);
     width: 100%;
-    max-width: 360px;
+    max-width: 380px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
+    border: 1px solid #CCD0CF;
 }
 
 h3 {
     margin: 0;
-    color: #1c1e21;
+    color: #06141B;
     text-align: center;
     font-size: 1.8rem;
     font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 input {
     padding: 14px;
-    border: 1px solid #dddfe2;
-    border-radius: 8px;
+    border: 1.5px solid #CCD0CF;
+    border-radius: 10px;
     font-size: 1rem;
-    background-color: #f5f6f7;
+    background-color: #F8F9F9;
+    color: #11212D;
     outline: none;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
 }
 
 input:focus {
-    border-color: #1877f2;
-    background-color: #fff;
-    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+    border-color: #253745;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(37, 55, 69, 0.1);
+}
+
+input::placeholder {
+    color: #9BA8AB;
 }
 
 button {
     padding: 14px;
-    background-color: #1877f2;
-    color: white;
+    background-color: #11212D;
+    color: #FFFFFF;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 1.1rem;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: all 0.3s ease;
+    margin-top: 5px;
 }
 
 button:hover {
-    background-color: #166fe5;
+    background-color: #06141B;
+    box-shadow: 0 5px 15px rgba(6, 20, 27, 0.3);
 }
 
 button:active {
-    transform: scale(0.98);
+    transform: scale(0.97);
 }

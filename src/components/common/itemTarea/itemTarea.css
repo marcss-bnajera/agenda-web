@@ -1,4 +1,4 @@
-.item-contacto {
+.item-tarea {
     font-family: 'Segoe UI', sans-serif;
     background-color: #CCD0CF;
     border-radius: 15px;
@@ -14,7 +14,7 @@
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-.item-contacto p {
+.item-tarea p:first-of-type {
     margin: 0;
     flex-grow: 1;
     color: #06141B;
@@ -48,4 +48,19 @@
 .btn-eliminar img {
     width: 22px;
     height: 22px;
+}
+
+.item-tarea button:not(.btn-eliminar) {
+    border-radius: 8px;
+    border: 1px solid #4A5C6A;
+    background-color: #11212D;
+    color: #FFFFFF;
+    padding: 5px 12px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.item-tarea button:not(.btn-eliminar):hover {
+    background-color: #4A5C6A;
 }
