@@ -1,3 +1,6 @@
+import { TaskList } from "./../../sections/tareas/dbTareas.js";
+import { saveTareasToStorage } from "./../localStorage/Storage.js";
+
 let ItemTarea = (estado, tarea, prioridad, descripcion) => {
     let div = document.createElement("div");
     div.className = "item-tarea";
@@ -13,6 +16,7 @@ let ItemTarea = (estado, tarea, prioridad, descripcion) => {
     etiquetaVerMas.textContent = "Ver más";
 
     let etiquetaPrioridad = document.createElement("p");
+    etiquetaPrioridad.className = "prioridad-tarea";
     etiquetaPrioridad.textContent = prioridad;
 
     let btnEliminar = document.createElement("button");
@@ -29,18 +33,23 @@ let ItemTarea = (estado, tarea, prioridad, descripcion) => {
         alert(`Descripcion: ${descripcion}`);
     });
 
-    //esto es para poder cambiar el estado de la tarea, cambiar de true a false y de false a true :)
     etiquetaEstado.addEventListener("change", () => {
-        if (etiquetaEstado.checked) {
-            console.log("La tarea está completada");
-        } else {
-            console.log("La tarea está incompleta");
+        const index = TaskList.findIndex(t => t.tarea === tarea);
+        if (index > -1) {
+            TaskList[index].estado = etiquetaEstado.checked;
+            saveTareasToStorage(TaskList);
         }
-
-        estado = etiquetaEstado.checked;
-        console.log("Estado actualizado:", estado);
     });
-
+    
+    btnEliminar.addEventListener("click", () => {
+        const index = TaskList.findIndex(t => t.tarea === tarea);
+        
+        if (index > -1) {
+            TaskList.splice(index, 1);
+            saveTareasToStorage(TaskList);
+            div.remove();
+        }
+    });
 
     return div;
 }

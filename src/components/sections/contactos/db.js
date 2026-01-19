@@ -1,7 +1,5 @@
-let ContactList = [
-    {nombre: "Juan", telefono: "15948738"},
-    {nombre: "Pedro", telefono: "34871592"},
-    {nombre: "Guillermo", telefono: "78912345"}
-];
+import { getContactsFromStorage } from "./../../common/localStorage/Storage.js";
+
+let ContactList = getContactsFromStorage('agenda-telefonica');
 
 export { ContactList };

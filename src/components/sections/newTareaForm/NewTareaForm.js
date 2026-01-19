@@ -1,3 +1,4 @@
+import { saveTareasToStorage } from "../../common/localStorage/Storage.js";
 import { TaskList } from "./../tareas/dbTareas.js";
 
 let FormularioTarea = () => {
@@ -58,6 +59,8 @@ let FormularioTarea = () => {
 
         console.log(TaskList);
         TaskList.push(tarea);
+
+        saveTareasToStorage(TaskList);
 
         form.reset();
     });

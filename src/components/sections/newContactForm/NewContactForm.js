@@ -1,3 +1,4 @@
+import { saveContactsToStorage } from "../../common/localStorage/Storage.js";
 import { ContactList } from "../contactos/db.js";
 
 let FormularioContacto = () => {
@@ -49,6 +50,10 @@ let FormularioContacto = () => {
 
         console.log(contacto);
         ContactList.push(contacto);
+
+        saveContactsToStorage(ContactList);
+
+        form.reset();
 
     });
 
