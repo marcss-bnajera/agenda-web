@@ -42,3 +42,18 @@ container.innerHTML = "";
 container.appendChild(Contactos());
 
 //container.appendChild(FormularioContacto());
+
+async function tareas() {
+    try {
+        let datos = await fetch("https://jsonplaceholder.typicode.com/posts");
+        let r = await data.json();
+        console.log(r);
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+tareas();
+
+console.log("Completado");
