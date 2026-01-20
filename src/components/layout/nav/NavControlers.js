@@ -2,6 +2,7 @@ import { Contactos } from "./../../sections/contactos/Contactos.js"
 import { FormularioContacto } from "./../../sections/newContactForm/NewContactForm.js"
 import { Tareas } from "./../../sections/tareas/Tareas.js";
 import { FormularioTarea } from "./../../sections/newTareaForm/NewTareaForm.js";
+import { DetalleContacto } from "./../../sections/detalleContacto/DetalleContacto.js";
 
 let container = document.getElementById("container");
 
@@ -25,4 +26,9 @@ let viewNewTarea = function () {
     container.appendChild(FormularioTarea());
 }
 
-export { viewContacts, viewNewContacts, viewTareas, viewNewTarea };
+let viewDetalleContacto = function (contactData) {
+    container.innerHTML = "";
+    container.appendChild(DetalleContacto(contactData));
+}
+
+export { viewContacts, viewNewContacts, viewTareas, viewNewTarea, viewDetalleContacto };
