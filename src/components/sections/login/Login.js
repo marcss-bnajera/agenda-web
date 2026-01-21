@@ -14,7 +14,7 @@ let login = function () {
     password.placeholder = "Password";
 
     let button = document.createElement("button");
-    button.innerHTML = "<a href='./../../../../src/app.html' style = 'text-decoration: none; color: white;' >Iniciar Sesión</a>";
+    button.innerHTML = "<a href='./src/app.html' style = 'text-decoration: none; color: white;' >Iniciar Sesión</a>";
 
     login.appendChild(h3);
     login.appendChild(user);
