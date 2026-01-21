@@ -19,6 +19,11 @@ let ItemTarea = (estado, tarea, prioridad, descripcion) => {
     etiquetaPrioridad.className = "prioridad-tarea";
     etiquetaPrioridad.textContent = prioridad;
 
+    let btnEditar = document.createElement("button");
+    btnEditar.className = "btn-eliminar";
+    btnEditar.innerHTML = '<img src="./assets/icons/editar.svg" alt="Editar">';
+    btnEditar.style.marginRight = "10px";
+
     let btnEliminar = document.createElement("button");
     btnEliminar.className = "btn-eliminar";
     btnEliminar.innerHTML = `<img src="./assets/icons/eliminar.svg" alt="Eliminar">`;
@@ -27,6 +32,7 @@ let ItemTarea = (estado, tarea, prioridad, descripcion) => {
     div.appendChild(etiquetaTarea);
     div.appendChild(etiquetaVerMas);
     div.appendChild(etiquetaPrioridad);
+    div.appendChild(btnEditar);
     div.appendChild(btnEliminar);
 
     etiquetaVerMas.addEventListener("click", () => {
@@ -40,6 +46,26 @@ let ItemTarea = (estado, tarea, prioridad, descripcion) => {
             saveTareasToStorage(TaskList);
         }
     });
+
+    btnEditar.addEventListener("click", () => {
+        const index = TaskList.findIndex(t => t.tarea === tarea);
+
+        if (index > -1) {
+            let nuevoNombre = prompt("Editar nombre de la tarea:", TaskList[index].tarea);
+            let nuevaDesc = prompt("Editar descripción:", TaskList[index].descripcion);
+            
+            if (nuevoNombre && nuevaDesc) {
+                TaskList[index].tarea = nuevoNombre;
+                TaskList[index].descripcion = nuevaDesc;
+                
+                saveTareasToStorage(TaskList);
+                
+                etiquetaTarea.textContent = nuevoNombre;
+                tarea = nuevoNombre;
+                descripcion = nuevaDesc;
+            }
+        }
+    })
     
     btnEliminar.addEventListener("click", () => {
         const index = TaskList.findIndex(t => t.tarea === tarea);
